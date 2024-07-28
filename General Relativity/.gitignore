@@ -20,7 +20,11 @@
 # *.ps
 # *.eps
 # *.pdf
-*.tex
+cha/*.tex
+img/*.png
+img/*.jpg
+*.ttf
+*.ttc
 ## Generated if empty string is given at "Please type another file name for output:"
 .pdf
 
