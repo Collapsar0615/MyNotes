@@ -51,3 +51,63 @@ Maxwell方程组表明Galileo相对性原理对于电磁理论并不成立.于�
     \caption{(a):闪电击中车头和车尾;(b):利用世界线进行分析}
     \label{fig:6-3}
 \end{figure}
+
+如图\ref{fig:6-3}(a),闪电分别击中火车车头$A$和车尾$B$,地面系$M$认为$A$和$B$同时遭受雷击,而火车系$M^\prime$认为并不同时,车头$A$首先遭受雷击.这表明了“同时的相对性”.以四维语言的时空图分析,地面系$M$的世界线为$P_2P_1$的中垂线,从$P_2,P_1$处发的光自然同时到达$M$.而火车系$M^\prime$的世界线却首先和$P_1$发出的光相遇(时间记为$\tau_1$),其次再和$P_2$相遇(时间记为$\tau_2$),所以$\tau_1<\tau_2$.
+
+狭义相对论的两条假设为:
+\begin{itemize}
+\item 相对性原理
+\item 光速不变性
+\end{itemize}
+并假设空间是均匀的,各向同性的.洛伦兹变换($v<c$,$c$取为1)为:
+\begin{align}
+    \left.
+\begin{aligned}
+    x^\prime&=\gamma(x-vt),\gamma=\dfrac{1}{\sqrt{1-v^2}}\\
+    t^\prime&=\gamma(t-vx)
+\end{aligned}
+\right\}\Rightarrow
+\left\{
+\begin{aligned}
+    u_x^\prime&=\dfrac{u_x-v}{1-u_xv}\\
+    u_y^\prime&=\dfrac{u_y}{\gamma(1-u_xv)}\\
+    u_z^\prime&=\dfrac{u_z}{\gamma(1-u_xv)}
+\end{aligned}
+\right.
+\end{align}
+另一个效果是间隔不变性:
+\begin{align}
+    \begin{aligned}
+        \text{d}I^2&\equiv-\text{d}t^2+\text{d}x^2+\text{d}y^2+\text{d}z^2\\
+        \text{d}I^{\prime2}&\equiv-\text{d}t^{\prime2}+\text{d}x^{\prime2}+\text{d}y^{\prime2}+\text{d}z^{\prime2}\\
+        \text{d}I^2&=\text{d}I^{\prime2}
+    \end{aligned}
+\end{align}
+
+\subsection{几何语言重新表述SR}
+$$
+\begin{aligned}
+    \text{牛顿引力论}&\to (\mathbb{R}^4,?)\\
+    \text{SR}&\to (\mathbb{R}^4,\eta_{ab})\\
+    \text{GR}&\to (\underset{\underset{\text{联通的}}{\downarrow}}{M},g_{ab})
+\end{aligned}
+\Rightarrow
+\left\{
+\begin{aligned}
+\overset{\underset{}{\text{物理}}}{\text{惯性系坐标}}&\to \overset{\underset{}{\text{数学}}}{\text{洛伦兹坐标}}\\
+\text{间隔不变}&\to \text{线元不变}\\
+\text{背景}&\to \text{闵氏时空}\\
+\end{aligned}
+\right.
+$$
+$$
+\begin{aligned}
+\overset{\boldsymbol{Phys.}}{inertial \ corrdinates} &\longleftrightarrow \overset{\boldsymbol{Math.}}{Lorentizian \ coordinates}\\
+\underset{\text{间隔}}{interval}&\longleftrightarrow Minkowski\ line\ element\\
+background\ spacetime &\longleftrightarrow 4-dim\ Minkowski \ space\\
+observer(point mass) &\longleftrightarrow timelike\ curve\\
+\underset{\text{惯性观者}}{inertial\quad observer}&\longleftrightarrow timelike\ geodesic
+\end{aligned}
+$$
+
+
