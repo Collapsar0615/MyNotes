@@ -209,8 +209,8 @@ svg-inkscape/
 *.sout
 *.sympy
 sympy-plots-for-*.tex/
-
-# pdf
+*.agx
+*.bib
 *.upa
 *.upb
 
