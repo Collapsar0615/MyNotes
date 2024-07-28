@@ -193,8 +193,6 @@ _minted*
 # pax
 *.pax
 
-# pdfpcnotes
-*.pdfpc
 
 # sagetex
 *.sagetex.sage
@@ -212,7 +210,7 @@ svg-inkscape/
 *.sympy
 sympy-plots-for-*.tex/
 
-# pdfcomment
+# pdf
 *.upa
 *.upb
 
