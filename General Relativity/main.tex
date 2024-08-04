@@ -1,128 +1,104 @@
-\documentclass[openany,11pt]{book}
-\usepackage[top=1in, bottom=1in,left=0.9in, right=0.9in]{geometry}
-\usepackage{amsmath, amsthm, amssymb, amsfonts}
-\usepackage{thmtools}
-\usepackage{graphicx}
-\usepackage{setspace}
-\usepackage{bm}
-\usepackage{extpfeil}
-\usepackage{verbatim}
-\usepackage{mathrsfs}
-\usepackage{fontspec}
-\usepackage{geometry}
-\usepackage{float}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,  % 修改为你想要的颜色
-    citecolor=blue,   % 修改为你想要的颜色
-    urlcolor=green   % 修改为你想要的颜色
-}
-\newcommand{\red}{\textcolor{red}}
-\newcommand{\blue}{\textcolor{blue}}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-\usepackage{framed}
-\usepackage[dvipsnames]{xcolor}
-\usepackage{tcolorbox}
-\usepackage[UTF8]{ctex}
-\usepackage{mathtools}
-\colorlet{LightGray}{White!90!Periwinkle}
-\colorlet{LightOrange}{Orange!15}
-\colorlet{LightGreen}{Green!15}
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{wrapfig}
-\usepackage{esint}
-\usepackage{subcaption}
-\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
-\newcommand{\for}{\because}
-\newcommand{\so}{\therefore}
-\newcommand{\cz}{\exists \hspace{0.1cm}}
-%\setmainfont{CMK.ttf}
-\setCJKmainfont{CMK.ttf}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  My documentation report
+%  Objetive: Explain what I did and how, so someone can continue with the investigation
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newfontfamily{\CMK}{CMK.ttf}
-\newenvironment{remark}[1][\textbf{Remark}]{
-  \renewcommand{\proofname}{\fontsize{10pt}{11pt}\selectfont #1}%
-  \begin{proof}
-	\CMK\fontsize{10pt}{11pt}\selectfont 
-  }{
-	\end{proof}
-}
-\newenvironment{pf}[1][\textbf{Proof}]{
-  \renewcommand{\proofname}{\fontsize{10pt}{11pt}\selectfont #1}%
-  \begin{proof}
-	\kaishu\fontsize{10pt}{11pt}\selectfont 
-  }{
-	\end{proof}
-}
-\declaretheoremstyle[name=Definition,]{thmsty}
-\declaretheorem[style=thmsty,numberwithin=section]{definition}
-\tcolorboxenvironment{definition}{colback=white}
 
-\declaretheoremstyle[name=Theorem,]{thmsty}
-\declaretheorem[style=thmsty,numberwithin=section]{theorem}
-\tcolorboxenvironment{theorem}{colback=LightGray}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
 
-\declaretheoremstyle[name=Proposition,]{prosty}
-\declaretheorem[style=prosty,numberlike=theorem]{proposition}
-\tcolorboxenvironment{proposition}{colback=LightOrange}
+\documentclass[11pt,fleqn]{book} 
+% Default font size and left-justified equations
 
-\declaretheoremstyle[name=Corollary,]{prcpsty}
-\declaretheorem[style=prcpsty,numberlike=theorem]{corollary}
-\tcolorboxenvironment{principle}{colback=LightGreen}
+\usepackage[UTF8]{ctex}% 设置中文
 
-\setstretch{1.2}
-\geometry{
-    textheight=9in,
-    textwidth=5.5in,
-    top=1in,
-    headheight=12pt,
-    headsep=25pt,
-    footskip=30pt
-}
+\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
 
-% ------------------------------------------------------------------------------
+\usepackage{xcolor} % Required for specifying colors by name
+\definecolor{ocre}{RGB}{52,177,201} % Define the orange color used for highlighting throughout the book
 
+% Font Settings
+\usepackage{avant} % Use the Avantgarde font for headings
+%\usepackage{times} % Use the Times font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{amsthm}
+
+% Bibliography
+\usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\addbibresource{bibliography.bib} % BibTeX bibliography file
+\defbibheading{bibempty}{}
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+%----------------------------------------------------------------------------------------
+%	Definitions of new commands
+%----------------------------------------------------------------------------------------
+
+\def\R{\mathbb{R}}
+\newcommand{\cvx}{convex}
 \begin{document}
 
-% ------------------------------------------------------------------------------
-% Cover Page and ToC
-% ------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
 
-\title{ \normalsize \textsc{}
-		\\ [2.0cm]
-		\HRule{1.5pt} \\
-		\LARGE \textbf{\uppercase{Differential Geometry}
-		\HRule{2.0pt} \\ [0.6cm] \LARGE{Lecture Notes} \vspace*{10\baselineskip}}
-		}
-\date{}
-\author{\textbf{Collapsar} 
-		\date{\today}}
+\begingroup
+\thispagestyle{empty}
+\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=1.25]{esahubble}}} % Image background
+\centering
+\vspace*{5cm}
+\par\normalfont\fontsize{35}{35}\rmfamily\selectfont
+\textbf{微分几何入门与广义相对论}\\
+{\LARGE Collapsar}\par % Book title
+\vspace*{1cm}
+{\Huge Lecture Notes}\par % Author name
+\endgroup
 
-\maketitle
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
 \newpage
+~\vfill
+\thispagestyle{empty}
 
-\tableofcontents
-\newpage
+%\noindent Copyright \copyright\ 2014 Andrea Hidalgo\\ % Copyright notice
 
-% ------------------------------------------------------------------------------
+\noindent \textsc{Summer Research Internship, University of Western Ontario}\\
+
+\noindent \textsc{github.com/LaurethTeX/Clustering}\\ % URL
+
+\noindent This research was done under the supervision of Dr. Pauline Barmby with the financial support of the MITACS Globalink Research Internship Award within a total of 12 weeks, from June 16th to September 5th of 2014.\\ % License information
+
+\noindent \textit{First release, August 2014} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{head1.png} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+%----------------------------------------------------------------------------------------
 \input{cha/1.tex}
-\input{cha/2.tex}
-\input{cha/3.tex}
-\input{cha/4.tex}
 \input{cha/5.tex}
 \input{cha/6.tex}
-
-
-% ------------------------------------------------------------------------------
-% Reference and Cited Works
-% ------------------------------------------------------------------------------
-
-\bibliographystyle{IEEEtran}
-\bibliography{References.bib}
-
-% ------------------------------------------------------------------------------
-\cite{1}
 \end{document}
